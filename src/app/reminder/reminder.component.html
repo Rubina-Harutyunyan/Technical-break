@@ -1,0 +1,57 @@
+<div class="container">
+
+  <h3>{{firstName}} {{lastName}}</h3>
+
+  <form [formGroup]="reminder" class="reminder-form">
+    <h2 class="title">Set your reminder:</h2>
+    <div class="reminder interval">
+      <label>Starts</label>
+      <ngx-material-timepicker #defaultValueStart></ngx-material-timepicker>
+      <input value="Starts" type="text" formControlName="start" aria-label="default time"
+             [ngxTimepicker]="defaultValueStart" [value]="'05:11 pm'" readonly>
+    </div>
+
+    <div class="reminder interval">
+      <label>Ends</label>
+      <ngx-material-timepicker #defaultValueEnd></ngx-material-timepicker>
+      <input type="text" formControlName="end" aria-label="default time" [ngxTimepicker]="defaultValueEnd"
+             [value]="'05:11 pm'" readonly>
+    </div>
+
+    <div class="reminder interval">
+      <mat-label>Repeat</mat-label>
+      <mat-form-field class="reminder-mat-form-field">
+        <mat-select class="reminder-mat-form-field-mat-select" [ngClass]="{'weekday' : flag}" multiple
+                    formControlName="repeat">
+          <mat-option class="reminder-mat-form-field-mat-option" style="color: #6180c0" #weekdays
+                      (click)="weekDaysSelection()" [value]="7">Weekdays
+          </mat-option>
+          <mat-option class="reminder-mat-form-field-mat-option" *ngFor="let day of weekDays" [value]="day.key">
+            {{day.dayName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="reminder interval">
+      <label>Interval</label>
+      <select formControlName="interval">
+        <option *ngFor="let period of interval" [value]="period.period">{{period.period}}</option>
+      </select>
+    </div>
+
+    <div class="reminder interval">
+      <label>Lasts</label>
+      <select formControlName="lasts">
+        <option *ngFor="let lasts of duration" [value]="lasts.lasts">{{lasts.lasts}}</option>
+      </select>
+    </div>
+    <button type="submit" (click)="reminderDetails(); openDialogTimerSetModal()" >Done!</button>
+
+  </form>
+  <button (click)="logOut()">Log out</button>
+</div>
+
+<!--(click)="openDialogTimeModal()"-->
+
+

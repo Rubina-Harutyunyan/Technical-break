@@ -1,0 +1,31 @@
+.remind-later-text {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  color: #6180c0;
+}
+
+.remind-later-buttons {
+  display: flex;
+  justify-content: space-around;
+  height: 110px;
+  width: 80%;
+  margin: auto;
+  margin-top: -30px;
+}
+
+button {
+  font-size: 25px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 25px;
+  background-color: #b2c1e2;
+  color: white;
+  margin: 0 2px;
+  cursor: pointer;
+  outline: none;
+}
+
+.mat-dialog-container {
+  height: 300px !important;
+}

@@ -1,0 +1,10 @@
+<div mat-dialog-content="" class="modal-box">
+  <p>{{data.text}}</p>
+</div>
+<div class="button-box">
+  <button mat-button (click)="onNoClick(data.confirm)">{{data.confirm}}</button>
+  <button mat-button mat-dialog-close="true" (click)="onNoClick(data.cancel); openDialogRemindLater()" cdkFocusInitial>
+    {{data.cancel}}
+  </button>
+</div>
+

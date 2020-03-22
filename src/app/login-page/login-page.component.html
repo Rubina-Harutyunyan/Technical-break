@@ -1,0 +1,32 @@
+<div class="login-main">
+  <h1>Login</h1>
+  <div class="login-box">
+
+    <form [formGroup]="user">
+      <div class="loginBox fields">
+        <input type="text" name="" formControlName="email" placeholder="Email"> <br>
+      </div>
+      <div class="errors" *ngIf=" user.get('email').hasError('required')  && user.get('email').dirty">*Required</div>
+      <div class="errors" *ngIf=" user.get('email').hasError('email')  && user.get('email').dirty">Not valid email</div>
+      <br>
+      <div class="loginBox fields">
+        <input type="password" name="" formControlName="password" placeholder="Password">
+      </div>
+      <div class="errors" *ngIf=" user.get('password').hasError('required')  && user.get('password').dirty">*Required
+      </div>
+      <div class="errors" *ngIf=" user.get('password').hasError('minlength')  && user.get('password').dirty">Your
+        password must be at least 6 characters long!
+      </div>
+      <br>
+
+      <button class="fields" type="submit" name="" value="Login" [disabled]="user.invalid" (click)="login()">Login
+      </button>
+      <br>
+      <a routerLink="/registration">Create An Account?</a> <br>
+      <a routerLink="/forgotPassword" class="forgotPassword">Forgot Password?</a> <br>
+    </form>
+  </div>
+</div>
+
+
+

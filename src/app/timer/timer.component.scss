@@ -1,0 +1,25 @@
+.modal-box {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 500;
+  color: #6180c0;
+}
+
+.button-box {
+  display: flex;
+  width: 70%;
+  margin: auto;
+  justify-content: space-around;
+}
+
+button {
+  background-color: #b2c1e2;
+  font-size: 20px;
+  font-weight: 500;
+  color: #6180c0;
+  padding: 13px 27px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  margin-top: 10px;
+}

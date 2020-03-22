@@ -1,0 +1,9 @@
+<div mat-dialog-content="" class="remind-later-text">
+  <h2>Can't take a break?</h2>
+  <p>{{data.text}}</p>
+</div>
+<div class="remind-later-buttons">
+  <div mat-dialog-actions="" *ngFor="let minute of data.minutes">
+    <button mat-button (click)="onNoClick(minute.minutes)">{{minute.minutes}}</button>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div mat-dialog-content="" class="suggestions-text">
+  <p>{{data.text}}</p>
+</div>
+<div class="suggestions-checkbox">
+  <div mat-dialog-actions="" *ngFor="let option of data.options; let i = index">
+    <label for="radiocheck{{i}}" class="radio-btn-form">{{option.option}}
+      <input id="radiocheck{{i}}" name="options" class="radio-btn-input" type="radio" (click)="getValue(option.option)"
+             [value]="option.option ">
+      <div class="radio-btn-icon"></div>
+    </label>
+  </div>
+  <button mat-button (click)="onNoClick(selectedOption)" class="suggestions-button">OK</button>
+</div>

@@ -1,0 +1,50 @@
+<div class="registration-main">
+  <h1>Sign Up</h1>
+  <div class="register-box">
+
+    <form [formGroup]="user">
+
+      <div class="registrationBox fields">
+        <input type="text" name="" formControlName="firstName" placeholder="First name">
+      </div>
+      <div class="errors" *ngIf="user.get('firstName').hasError('required') && user.get('firstName').dirty">*Required
+      </div>
+      <div class="errors" *ngIf="user.get('firstName').hasError('pattern') && user.get('firstName').dirty">Only
+        letters
+      </div>
+      <br>
+      <div class="registrationBox fields">
+        <input type="text" name="" formControlName="lastName" placeholder="Last name">
+      </div>
+      <div class="errors" *ngIf="user.get('lastName').hasError('required') && user.get('lastName').dirty">*Required
+      </div>
+      <div class="errors" *ngIf="user.get('lastName').hasError('pattern') && user.get('lastName').dirty">Only letters
+      </div>
+      <br>
+
+      <div class="registrationBox fields">
+        <input type="text" name="" formControlName="email" placeholder="Email"> <br>
+      </div>
+
+      <div class="errors" *ngIf=" user.get('email').hasError('required')  && user.get('email').dirty">*Required</div>
+      <div class="errors" *ngIf=" user.get('email').hasError('email')  && user.get('email').dirty">Not valid email</div>
+
+      <br>
+      <div class="registrationBox fields">
+        <input type="password" name="" formControlName="password" placeholder="Password">
+      </div>
+      <div class="errors" *ngIf=" user.get('password').hasError('required')  && user.get('password').dirty">*Required
+      </div>
+      <div class="errors" *ngIf=" user.get('password').hasError('minlength')  && user.get('password').dirty">Your
+        password must be at least 6 characters long!
+      </div>
+      <br>
+
+      <button class="fields" type="submit" name="" value="Register" [disabled]="user.invalid" (click)="register()">Sign
+        Up
+      </button>
+      <br>
+      <a routerLink="/login">Sign in</a> <br>
+    </form>
+  </div>
+</div>
